@@ -338,7 +338,7 @@ a:focus {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	max-width: 80em; /* 56.4 * 20px = 1128px */
+	max-width: 65em; /* 56.4 * 20px = 1128px */
 }
 
 /*
@@ -539,6 +539,14 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+/*
+show and hide loading
+*/
+
+.c-display__hide{
+	display: none;
+}
 
 /*
     Component: Logo
@@ -895,6 +903,9 @@ a:focus {
 		border-radius: 10px;
 	}
 
+}
+@media (min-width: 1600px){
+	
 	.o-layout--gutter-lg > .o-layout__item {
 		padding: 0 48px;
 	}

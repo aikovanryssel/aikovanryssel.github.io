@@ -197,6 +197,19 @@ const moreActors = data => {
 	domActorsMovie.innerHTML = movieActorsHTML;
 };
 
+const showHideLoading=()=>{
+
+	let aiko =document.querySelector("js-button");
+	aiko.addEventListener('click', function() {
+		let test = document.getElementById("loader");
+		if (test.style.display === "none") {
+		  test.style.display = "block";
+		} else {
+		  test.style.display = "none";
+		}
+	});
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM is ready to roll.. 👌');
 	domNameMovie = document.querySelector('.js-nameMovie');
@@ -207,7 +220,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	domGenreMovie = document.querySelector('.js-genreMovie');
 	domSummaryMovie = document.querySelector('.js-summaryMovie');
 
+
 	//#1 event listner GamepadButton
 	//#2 on click show loader hide content
 	getAPOCoolestWay();
+	showHideLoading();
 });
