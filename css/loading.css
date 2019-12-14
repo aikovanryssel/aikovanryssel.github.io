@@ -24,6 +24,13 @@
 	left: 50%;
 	animation: rotade 2s ease-in-out both infinite;
 }
+.c-flex{
+	display: flex;
+} 
+.c-center{
+	justify-content: center; 
+	align-items: center;
+}
 .box .b1{
 	display: flex;
 	border-color: wheat;

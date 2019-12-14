@@ -197,7 +197,7 @@ const moreActors = data => {
 };
 
 window.addEventListener("load", function () {
-    const loader = document.querySelector(".js-loader");
+	const loader = document.querySelector(".js-loader");
     loader.className += " hidden";
 });
 
