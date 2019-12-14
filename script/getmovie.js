@@ -158,7 +158,6 @@ const showRandomMovie = data => {
 	moreActors(data);
 	movieSummary(data);
 
-	removeLoadingScreen();
 };
 const movieSummary = data => {
 	//summary
@@ -197,18 +196,7 @@ const moreActors = data => {
 	domActorsMovie.innerHTML = movieActorsHTML;
 };
 
-const showHideLoading=()=>{
 
-	let aiko =document.querySelector("js-button");
-	aiko.addEventListener('click', function() {
-		let test = document.getElementById("loader");
-		if (test.style.display === "none") {
-		  test.style.display = "block";
-		} else {
-		  test.style.display = "none";
-		}
-	});
-}
 
 document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM is ready to roll.. 👌');
@@ -224,5 +212,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	//#1 event listner GamepadButton
 	//#2 on click show loader hide content
 	getAPOCoolestWay();
-	showHideLoading();
 });
