@@ -196,7 +196,10 @@ const moreActors = data => {
 	domActorsMovie.innerHTML = movieActorsHTML;
 };
 
-
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".js-loader");
+    loader.className += " hidden"; // class "loader hidden"
+});
 
 document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM is ready to roll.. 👌');
