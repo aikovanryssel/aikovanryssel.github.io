@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <!--<link rel="stylesheet" href="css/test.css">-->
     <link rel="stylesheet" href="css/screenCommingsoon.css">
-   
-    <script src="./script/app.js"></script>
+    <script src="./script/validation.js"></script>
+
 </head>
 <body>
         <main class="c-app__main ">
@@ -31,25 +31,26 @@
                         <p>Movie Roulette is an app that will choose a movie for you. The senario is well known to us all. An evening with your family, girlfriend or friends, where you want to watch a movie but nobody knows which movie. 
                         Here comes Movie Roulette with the solution. You open the app and get to see a random movie that you can see with the family, girlfriend or friends. 
                         </p>
-                        <form class="c-card u-mb-clear" action="#">
+                        <form class="c-card u-mb-clear" action="POST" id="emailform">
                             <p class="c-form-field">
                                 <label class="c-label c-input--with-floating-label" for="username">
                                     Email address
                                 </label>
-                                <input class="c-input c-input--with-floating-label js-floating-input" type="email" name="username" id="username" placeholder="student@student.howest.be" required>
+                                <input class="c-input c-input--with-floating-label js-input" type="email" name="username" id="username" placeholder="student@student.howest.be" required>
                             </p>
-                        </form>
+                      
                         <div>
                             <label class="c-label " for="username">
-                            <a href="#" class="c-link-cta c-link-cta--lg">Let me know when it's ready!</a>
+                            <a href="#" class="c-link-cta c-link-cta--lg js-check">Let me know when it's ready!</a>
                             </label>
                         </div>
+                    </form>
                     </div>
                     <div class="c-dashboard__item c-viewheight u-grid-x-2 u-grid-y-1">
                         <figure class="c-figure "> 
                             <img class=" c-img" src="./img/mockupsite.png" alt="font img">
                         </figure>
-                        <a href="#" class="c-hiddenButton c-link-cta c-link-cta--lg">Follow us!</a>
+                        <a href="#" class="c-hiddenButton c-link-cta c-link-cta--lg ">Follow us!</a>
                     </div>
                 </div>
             </div>

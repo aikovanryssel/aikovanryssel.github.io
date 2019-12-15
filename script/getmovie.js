@@ -205,8 +205,9 @@ window.addEventListener("load", function () {
 	timerfunct(loader);
 });
 const timerfunct=(loader)=>{
-	setTimeout(function(){	loader.className += " hidden";},2000)
+	setTimeout(function(){	loader.className += " hidden";},1300)
 }
+
 document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM is ready to roll.. 👌');
 	domNameMovie = document.querySelector('.js-nameMovie');
