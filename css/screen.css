@@ -594,7 +594,7 @@ show and hide loading
 		--input-backgroundColor,
 		var(--global-input-backgroundColor)
 	);
-	color: var(--global-input-color);
+	color: var(--global-color-alpha-light);
 	font-family: inherit;
 	font-size: 16px;
 	line-height: calc(var(--global-baseline) * 3);
