@@ -150,7 +150,7 @@ h3 {
 
 h1 {
 	font-size: 32px;
-	line-height: 24px;
+	line-height: 32px;
 	margin: 0 0 16px;
 }
 
@@ -741,22 +741,6 @@ show and hide loading
 		width: auto;
 	}
 
-	/*
-        Bonus: real centering with CSS
-        Checkout: https://css-tricks.com/centering-css-complete-guide/
-    */
-
-	/* .c-footer__logo {
-        width: auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .c-footer__logo .c-logo {
-        margin-bottom: 0;
-    } */
 }
 
 /*

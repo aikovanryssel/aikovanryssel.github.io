@@ -60,7 +60,6 @@ const movie = [
 	'tt1869345', // Contratiempo
 	'tt3612616', // Mommy
 	'tt3315342', // Logan
-	'tt9646704', // Relatos salvajes
 	'tt2024544', // 12 Years a Slave
 	'tt1979320', // Rush
 	'tt1895587', // Spotlight
@@ -142,10 +141,12 @@ const getAPOCoolestWay = async function() {
 	const data = await fetchData(SERVER_ENDPOINT);
 	console.log(data);
 	showRandomMovie(data);
+	
 };
 
 const showRandomMovie = data => {
 	//poster
+
 	console.log(data.Poster);
 	//moviePosterHTML=`<img class="js-posterMovie" src="${data.Search[0].Poster}" alt="${data.Search[0].Title}">`;
 	domPosterMovie.setAttribute('src', data.Poster);
@@ -195,12 +196,17 @@ const moreActors = data => {
     ${data.Actors}</p>`;
 	domActorsMovie.innerHTML = movieActorsHTML;
 };
-
+const testing=()=>{
+	const testfile=document.querySelector(".js-wait");
+	testfile.className="hidden";
+}
 window.addEventListener("load", function () {
 	const loader = document.querySelector(".js-loader");
-    loader.className += " hidden";
+	timerfunct(loader);
 });
-
+const timerfunct=(loader)=>{
+	setTimeout(function(){	loader.className += " hidden";},2000)
+}
 document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM is ready to roll.. 👌');
 	domNameMovie = document.querySelector('.js-nameMovie');
@@ -210,9 +216,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	domLanguageMovie = document.querySelector('.js-langMovie');
 	domGenreMovie = document.querySelector('.js-genreMovie');
 	domSummaryMovie = document.querySelector('.js-summaryMovie');
-
-
-	//#1 event listner GamepadButton
-	//#2 on click show loader hide content
 	getAPOCoolestWay();
 });
