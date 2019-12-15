@@ -33,13 +33,13 @@
 }
 .box .b1{
 	display: flex;
-	border-color: wheat;
+	border-color:  rgb(136, 54, 143);
 	width: 200px;
 	height: 200px;
 }
 .box .b2{
 	display: flex;
-	border-color: purple;
+	border-color:#ddc4ff;
 	width: 160px;
 	height: 160px;
 	animation-delay:0.2s ease-in-out both;

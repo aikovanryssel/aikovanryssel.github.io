@@ -15,15 +15,20 @@
 }
 :root {
 	/* Global colors */
-	--global-color-alpha-light: #4f95ff;
-	--global-color-alpha: #d2d7f6;
-	--global-color-alpha-dark: #2e77e6;
-	--global-color-alpha-x-dark: #1b4186;
-	--global-color-alpha-transparent: #3385ffbf;
-	--global-color-alpha-x-transparent: #8c64dba2 ;
+
+	--global-color-alpha-light: #d2d7f6;
+	--global-color-alpha: #A58EC6;
+	--global-color-light: #ddc4ff;
+	--global-color-dark:#000;
+	--global-color-focus: #3e3ea8;
+	--global-button-color:#825eca;
+	--global-color-subtitels:#cdaef8;
+	--global-color-lighter:#d2d7f6;
 
 	--global-color-light: #ddc4ff;
-
+	--input-backgroundColor:none;
+	--input-focus-borderColor:var(--global-color-alpha)
+	--input-borderColor:var(--global-button-color);
 	/* global page settings */
 	--global-page-color: var(--global-color-neutral-xxxx-dark);
 	--global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
@@ -55,7 +60,7 @@
 	--global-label-color: var(--global-color-neutral-xx-dark);
 	--global-placeholder-color: var(--global-color-neutral-x-light);
 	--global-input-backgroundColor: transparent;
-	--global-input-color: var(--global-color-neutral-xxxx-dark);
+	--global-input-color: var(--global-button-color);
 	--global-input-borderColor: var(--global-color-light);
 	--global-input-hover-borderColor: var(--global-color-alpha);
 	--global-input-focus-borderColor: var(--global-color-alpha);
@@ -82,8 +87,8 @@ html {
 	font-size: 16px;
 	line-height: 1.5;
 	font-family: 'Raleway', Helvetica, arial, sans-serif;
-	color: #d2d7f6;
-	background: black;
+	color:  var(--global-color-alpha-light);
+	background: var(--global-color-dark);
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -110,14 +115,14 @@ html {
  */
 
 ::-moz-selection {
-	background: #A58EC6;
-	color: #d2d7f6;
+	background:var(--global-selection-backgroundColor);
+	color: var(--global-color-alpha-light);
 	text-shadow: none;
 }
 
 ::selection {
-	background: #A58EC6;
-	color: #d2d7f6;
+	background:var(--global-selection-backgroundColor);
+	color: var(--global-color-alpha-light);
 	text-shadow: none;
 }
 
@@ -221,18 +226,18 @@ hr {
 }
 
 a {
-	color: #5051db;
+	color:var(--global-color-alpha-light);
 	transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-	color: #3e3ea8;
+	color:var(--global-color-focus);
 }
 
 a:hover,
 a:focus {
-	color: #3e3ea8;
+	color:var(--global-color-focus);
 }
 
 /*------------------------------------*\
@@ -252,11 +257,6 @@ a:focus {
 }
 
 /* color modifiers */
-
-.o-row--gradient-1 {
-	background: linear-gradient(to top right, #5051db, #3887f7);
-	color: #fff;
-}
 
 /* size modifiers */
 
@@ -278,10 +278,6 @@ a:focus {
 	.o-row--lg {
 		padding-top: 24px;
 	}
-	.o-img {
-		min-height: 100vh;
-		background: url('../img/sideJoker.jpg') no-repeat;
-	}
 }
 @media (min-width: 1900px) {
 	.o-row {
@@ -297,10 +293,6 @@ a:focus {
 	.o-row--lg {
 		padding-top: 72px;
 		padding-bottom: 48px;
-	}
-	.o-img {
-		min-height: 100vh;
-		background: url('../img/sideJoker.jpg') no-repeat;
 	}
 }
 /* padding clear modifiers */
@@ -643,72 +635,6 @@ a:focus {
     Main footer of the website
 */
 
-.c-footer {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.c-footer__logo {
-	width: 100%;
-}
-
-.c-footer__nav {
-	width: 50%;
-}
-
-@media (min-width: 768px) {
-	.c-footer {
-		justify-content: center;
-		align-items: center;
-	}
-
-	.c-footer__logo {
-		display: flex;
-		justify-content: center;
-		padding: 0 12px;
-	}
-
-	.c-footer__nav {
-		width: auto;
-		padding: 0 16px;
-	}
-}
-
-@media (min-width: 992px) {
-	.c-footer {
-		justify-content: space-between;
-	}
-
-	.c-footer__nav {
-		padding: 0;
-	}
-
-	.c-footer__logo + .c-footer__nav {
-		order: -1;
-	}
-
-	.c-footer__logo {
-		width: auto;
-	}
-
-	/*
-        Bonus: real centering with CSS
-        Checkout: https://css-tricks.com/centering-css-complete-guide/
-    */
-
-	/* .c-footer__logo {
-        width: auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .c-footer__logo .c-logo {
-        margin-bottom: 0;
-    } */
-}
-
 /*
     Component: Nav
     ---
@@ -790,7 +716,7 @@ a:focus {
 	font-weight: 400;
 }
 .c-subtitel {
-	color: #ddc4ff;
+	color: var(--global-color-subtitels);
 	font-weight: 600;
 }
 .c-lead--lg {
@@ -917,24 +843,24 @@ a:focus {
 	font-weight: 400;
 	padding: 8px 20px;
 	border-radius: 4px;
-	box-shadow: inset 0 0 0 1px #825eca;
-	background: #825eca linear-gradient(to bottom, #825eca, rgb(108, 61, 201));
+	box-shadow: inset 0 0 0 1px var(--global-button-color) ;
+	background: var(--global-button-color) linear-gradient(to bottom, var(--global-button-color), rgb(108, 61, 201));
 }
 
 .c-link-cta,
 .c-link-cta:visited,
 .c-link-cta:active {
-	color: #d2d7f6;
+	color:var(--global-color-lighter-) ;
 }
 
 .c-link-cta:hover,
 .c-link-cta:focus {
-	color: #d2d7f6;
-	background: #825eca;
+	color:var(--global-color-lighter-) ;
+	background: var(--global-button-color);
 }
 
 .c-link-cta:active {
-	background-color: #825eca;
+	background: var(--global-button-color);
 }
 
 .c-link-cta--lg {
@@ -1004,17 +930,6 @@ a:focus {
     Utility classes to put specific colors onto elements
 */
 
-.u-color-primary-light {
-	color: #7373f5;
-}
-
-.u-color-primary-base {
-	color: #5051db;
-}
-
-.u-color-primary-dark {
-	color: #3e3ea8;
-}
 
 /*
     Utilities: spacing

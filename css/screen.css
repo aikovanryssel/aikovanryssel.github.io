@@ -15,15 +15,14 @@
 }
 :root {
 	/* Global colors */
-	--global-color-alpha-light: #4f95ff;
-	--global-color-alpha: #d2d7f6;
-	--global-color-alpha-dark: #2e77e6;
-	--global-color-alpha-x-dark: #1b4186;
-	--global-color-alpha-transparent: #3385ffbf;
-	--global-color-alpha-x-transparent: #3385ff4d;
-
+	--global-color-alpha-light: #d2d7f6;
+	--global-color-alpha: #A58EC6;
 	--global-color-light: #ddc4ff;
-
+	--global-color-dark:#000;
+	--global-color-focus: #3e3ea8;
+	--global-button-color:#825eca;
+	--global-color-subtitels:#cdaef8;
+	--global-color-lighter:#d2d7f6;
 	/* global page settings */
 	--global-page-color: var(--global-color-neutral-xxxx-dark);
 	--global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
@@ -82,8 +81,8 @@ html {
 	font-size: 16px;
 	line-height: 1.5;
 	font-family: 'Raleway', Helvetica, arial, sans-serif;
-	color: #d2d7f6;
-	background: black;
+	color:  var(--global-color-alpha-light);
+	background: var(--global-color-dark);
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -109,15 +108,11 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-	background: #5051db;
-	color: #d2d7f6;
-	text-shadow: none;
-}
+
 
 ::selection {
-	background: #5051db;
-	color: #d2d7f6;
+	background:var(--global-selection-backgroundColor);
+	color: var(--global-color-alpha-light);
 	text-shadow: none;
 }
 
@@ -222,18 +217,18 @@ hr {
 }
 
 a {
-	color: #5051db;
+	color: var(--global-color-alpha-light);
 	transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-	color: #3e3ea8;
+	color:var(--global-color-focus);
 }
 
 a:hover,
 a:focus {
-	color: #3e3ea8;
+	color:var(--global-color-focus);
 }
 
 @media (max-width: 768px) {
@@ -272,12 +267,6 @@ a:focus {
 	flex-direction: column;
 }
 
-/* color modifiers */
-
-.o-row--gradient-1 {
-	background: linear-gradient(to top right, #5051db, #3887f7);
-	color: #fff;
-}
 
 /* size modifiers */
 
@@ -299,10 +288,6 @@ a:focus {
 	.o-row--lg {
 		padding-top: 24px;
 	}
-	.o-img {
-		min-height: 100vh;
-		background: url('../img/sideJoker.jpg') no-repeat;
-	}
 }
 @media (min-width: 1900px) {
 	.o-row {
@@ -318,10 +303,6 @@ a:focus {
 	.o-row--lg {
 		padding-top: 72px;
 		padding-bottom: 48px;
-	}
-	.o-img {
-		min-height: 100vh;
-		background: url('../img/sideJoker.jpg') no-repeat;
 	}
 }
 /* padding clear modifiers */
@@ -556,7 +537,7 @@ show and hide loading
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: black;
+	background: var(--global-color-dark);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -749,66 +730,6 @@ show and hide loading
     Main navigation of the site
 */
 
-.c-nav-trigger {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 24px;
-	width: 24px;
-	height: 24px;
-}
-
-.c-nav-trigger__svg {
-	fill: #202024;
-	height: 100%;
-}
-
-.c-nav {
-	font-size: 18px;
-	line-height: 24px;
-}
-
-.c-nav--meta {
-	font-size: 16px;
-}
-
-.c-nav__link {
-	text-decoration: none;
-	font-weight: 400;
-	display: block;
-	padding: 8px 0;
-}
-
-.c-nav__link,
-.c-nav__link:visited,
-.c-nav__link:active {
-	color: #202024;
-}
-
-.c-nav__link--meta,
-.c-nav__link--meta:visited,
-.c-nav__link--meta:active {
-	color: #6c6c75;
-}
-
-.is-selected .c-nav__link,
-.c-nav__link:hover,
-.c-nav__link:focus {
-	color: #5051db;
-}
-
-@media (min-width: 992px) {
-	.c-nav__list {
-		display: flex;
-		margin-left: -16px;
-		margin-right: -16px;
-	}
-
-	.c-nav__link {
-		padding: 8px 16px;
-	}
-}
-
 /*
     Component: Lead
     ---
@@ -819,7 +740,7 @@ show and hide loading
 	font-weight: 400;
 }
 .c-subtitel {
-	color: #cdaef8;
+	color: var(--global-color-subtitels);
 	font-weight: 600;
 }
 .c-lead--lg {
@@ -959,24 +880,24 @@ show and hide loading
 	font-weight: 400;
 	padding: 8px 20px;
 	border-radius: 4px;
-	box-shadow: inset 0 0 0 1px #825eca;
-	background: #825eca linear-gradient(to bottom, #825eca, rgb(108, 61, 201));
+	box-shadow: inset 0 0 0 1px var(--global-button-color) ;
+	background: var(--global-button-color) linear-gradient(to bottom, var(--global-button-color), rgb(108, 61, 201));
 }
 
 .c-link-cta,
 .c-link-cta:visited,
 .c-link-cta:active {
-	color: #d2d7f6;
+	color:var(--global-color-lighter-) ;
 }
 
 .c-link-cta:hover,
 .c-link-cta:focus {
-	color: #d2d7f6;
-	background: #825eca;
+	color:var(--global-color-lighter-);
+	background: var(--global-button-color);
 }
 
 .c-link-cta:active {
-	background-color: #825eca;
+	background-color:var(--global-button-color);
 }
 
 .c-link-cta--lg {
@@ -1007,18 +928,6 @@ show and hide loading
     ---
     Utility classes to put specific colors onto elements
 */
-
-.u-color-primary-light {
-	color: #7373f5;
-}
-
-.u-color-primary-base {
-	color: #5051db;
-}
-
-.u-color-primary-dark {
-	color: #3e3ea8;
-}
 
 /*
     Utilities: spacing
