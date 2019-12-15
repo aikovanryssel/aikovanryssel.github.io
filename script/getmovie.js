@@ -28,7 +28,6 @@ const movie = [
 	'tt8291224', // Uri: The Surgical Strike
 	'tt8267604', // Capharnaüm
 	'tt8108198', // Andhadhun
-	'tt5783380', // Kimi no na wa
 	'tt5074352', // Dangal
 	'tt4633694', // Spider-Man: Into the Spider-Verse
 	'tt2380307', // Coco
@@ -205,7 +204,7 @@ window.addEventListener("load", function () {
 	timerfunct(loader);
 });
 const timerfunct=(loader)=>{
-	setTimeout(function(){	loader.className += " hidden";},1300)
+	setTimeout(function(){	loader.className += " hidden";},1000)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
